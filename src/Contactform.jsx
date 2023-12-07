@@ -28,7 +28,7 @@ const Contactform = () => {
             <textarea name="message" className="message" style={{width: "100%", display:"block"}} cols="20" rows="6" required/>
         </div>
     </div>
-      <button type="submit" className="footer-submit">subscribe now</button>
+      <div className='subscribe-btn'><button type="submit" className="footer-submit">subscribe now</button></div>
       </form>
 
     </Formcontainer>
@@ -75,5 +75,32 @@ const Formcontainer = styled.section`
 .form-container .input textarea:focus{
     border: 1px solid red;
     background-color: white;
+}
+.subscribe-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+.subscribe-btn button{
+    padding: .5rem 1rem;
+    font-size: 1.6rem;
+    background-color: #010101;
+    color: rgba(255,255,255, 0.8);
+    border: none;
+    outline: none;
+}
+.subscribe-btn button:hover{
+    background-color: rgba(01,01,01, 0.9);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* ............Media Query............................ */
+@media (max-width: 600px) {
+    .form-container .input{
+    width: 100%; 
+}
 }
 `

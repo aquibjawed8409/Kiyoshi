@@ -11,6 +11,7 @@ import Contact from './Contact'
 import Error from './Error'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GlobalStyle from './GlobalStyle'
+import SingleProduct from './SingleProduct'
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/product' element = {<Product />} />
         <Route path='/catalogue' element = {<Catalogue />} />
         <Route path='/pricelist' element = {<PriceList />} />
+        <Route path='/singleproduct/:id' element = {<SingleProduct />} />
         <Route path='/contact' element = {<Contact />} />
         <Route path='*' element = {<Error />} />
       </Routes>

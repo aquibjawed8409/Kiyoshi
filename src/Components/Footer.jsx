@@ -209,7 +209,7 @@ const FooterContainer = styled.section`
   // Top Footer CSS
   .top-footer-area {
     background-image: url(https://kiyoshi-india.com/resources/assets/img/newsletter-img.jpg);
-    min-height: 60vh;
+    /* min-height: 60vh; */
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -254,13 +254,12 @@ const FooterContainer = styled.section`
     border: none;
     outline: none;
     background-color: #da251c;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #fff;
     padding: 0px 30px;
     text-transform: capitalize;
-  }
-  .footer-submit {
-    margin-top: 0px;
+    display: flex;
+    align-items: center;
   }
   form button:hover {
     background-color: #da250c;
@@ -394,4 +393,20 @@ const FooterContainer = styled.section`
       font-size: 1.8rem;
     }
   }
-`;
+
+
+
+  @media (max-width: 600px){
+    
+  .top-footer-area{
+    min-height: 65vh; 
+    
+  }
+  form button {
+  /* right: 7rem; */
+    top: 7rem;
+    padding: 0px 20px;
+
+  }
+  }
+`

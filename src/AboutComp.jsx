@@ -28,13 +28,12 @@ const Aboutcontent = styled.section`
 margin-top: 7rem;
 .about-content-container{
     display: flex;
-    /* flex-direction: row-reverse; */
     gap: 2rem;
 }
 .about-content-image img{
-    max-width: 545px;
-    height: auto;
-}
+  width: 545px;
+  height: auto;
+} 
 .about-content-image img::before{
     content: "";
     position: absolute;
@@ -64,10 +63,13 @@ font-weight: 400;
   .about-content-container{
     display: flex;
     flex-direction: column;
-    color: red;
     justify-content: center;
     flex-wrap: wrap;
   }
+  .about-content-image img{
+    height: auto;
+    width: 100%;
+}
 }
 
 `

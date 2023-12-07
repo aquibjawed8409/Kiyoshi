@@ -42,11 +42,11 @@ export default FilterProduct;
 
 const ProductSection = styled.section`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-top: 20px;
 
   .empty-message {
@@ -57,6 +57,8 @@ const ProductSection = styled.section`
 
 const Pagination = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 20px;
   margin-bottom: 20px;
 `;

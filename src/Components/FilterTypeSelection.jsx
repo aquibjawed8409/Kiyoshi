@@ -112,6 +112,7 @@ const FilterSelect = styled.section`
     padding: 4rem;
     max-width: 30rem;
     position: relative;
+    text-align: center;
   }
   .filter-type img,
   .filter-type-1 img {

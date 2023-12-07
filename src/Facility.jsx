@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Facility = () => {
   return (
     <FacilityContainer>
-      <h2 className="content-heading">Factories/Infrastructure/Testing Facility</h2>
-
+      <h2 className="content-heading">Factories / Infrastructure / Testing Facility</h2>
+ 
       <div className="facility-image">
         <div>
             <img src="https://kiyoshi-india.com/resources/assets/img/gallery/gallery-1.jpg" alt="" />
@@ -47,11 +47,11 @@ padding: 6rem 0;
 .facility-image{
     margin: 5rem auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 5rem;
     max-width: 120rem;
-    justify-content: center;
-/* margin: auto; */
     img{
         width: 25rem;
     }
@@ -64,4 +64,5 @@ padding: 6rem 0;
         }
     }
 }
+
 `

@@ -8,7 +8,7 @@ import FilterTypeSelection from './Components/FilterTypeSelection';
 const Product = () => {
   return (
     <ProductContainer>
-      <Carousel/>
+      {/* <Carousel/> */}
       <FilterTypeSelection/>
       <div className='product'>
         <FilterSection />
@@ -26,5 +26,15 @@ const ProductContainer = styled.section`
   gap : 100px;
   width: 90%;
   margin: auto;
+}
+
+
+@media (max-width: 968px){
+  .product{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+  }
 }
 `

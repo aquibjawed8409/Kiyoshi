@@ -71,4 +71,14 @@ const FilterContainer = styled.section`
       color: white;
     }
   }
+
+  /* .........Media Query ............... */
+  @media (max-width: 968px){
+    .FilterCategory{
+      text-align: center;
+    width: 100%;
+    }
+  }
+
 `
+

@@ -10,10 +10,10 @@ const Home = () => {
     <HomeContainer>
    <div className='home-page'>
        {/* <Carousel/> */}
-       {/* <FilterTypeSelection/> */}
-     {/* <CategorySelection /> */}
-     {/* <Facility/> */}
-     {/* <Certificate /> */}
+       <FilterTypeSelection/>
+     <CategorySelection />
+     <Facility/>
+     <Certificate />
    </div>
     </HomeContainer>
   )
