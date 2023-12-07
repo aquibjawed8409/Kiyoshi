@@ -1,7 +1,6 @@
 // import {createGlobalStyle} from 'styled-components';
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
 
 *{
@@ -75,6 +74,52 @@ li{
     background-color: #fff;
     margin-top: 10px;
 }
-`
+.common-title{
+    color: white;
+}
+.common-title h2{
+    font-weight: 900;
+    letter-spacing: -2px;
+    font-size: 4.5rem;
+    line-height: 1;
+    margin: 2rem;
+    color: white;
+}
+.common-title .breadcrum{
+    display: flex;
+    gap: 10px;
+    margin-left: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+}
+.common-title .breadcrum li a{
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.common-title .breadcrum li{
+    position: relative;
+}
+.common-title .breadcrum .breadcrum-before::before{
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 6px;
+    height: 12px;
+    width: 1px;
+    background: red;
+}
+.content-heading{
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 1.5rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: -1.5px;
+    font-size: 4rem;
+}
+`;
 
 export default GlobalStyle;

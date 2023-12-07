@@ -7,7 +7,6 @@ const NavTop = () => {
   return (
     <Navigation>
       <div className="top-nav">
-        <div className="container d-flex flex-row justify-content-between">
           <div className="left-content">
             <p>
               <FaLocationDot className="icons" /> 182/205, SECTOR 17/18 DIVIDER
@@ -20,7 +19,7 @@ const NavTop = () => {
             </a>
           </div>
           <div className="right-country-logo">
-            <ul className="d-flex flex-row gap-8">
+            <ul className="country-logo">
               <li>
                 <img
                   src="https://kiyoshi-india.com/resources/assets/img/english.png"
@@ -59,7 +58,6 @@ const NavTop = () => {
             </ul>
           </div>
         </div>
-      </div>
     </Navigation>
   );
 };
@@ -69,13 +67,19 @@ export default NavTop;
 const Navigation = styled.div`
   .top-nav {
     background-color: #001;
-    padding-top: 10px;
-    padding-bottom: 10px;
     color: white;
     min-height: 70px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+  }
+  .icons{
+    color: #da251c;
+    font-size: 1.5rem;
+  }
+  .country-logo{
+    display: flex;
+    gap: 1.3rem;
   }
   .flags {
     width: 22px;
@@ -83,5 +87,59 @@ const Navigation = styled.div`
   }
   .info-mail{
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    .top-nav{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .left-content{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .top-nav{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .left-content{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .top-nav{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+
+    }
+    .left-content{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      /* font-size: 19px; */
+    }
   }
 `;
