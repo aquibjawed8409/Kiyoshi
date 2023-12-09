@@ -1,52 +1,58 @@
-import React, { useContext } from 'react'
-import { FilterContext } from '../Context/FilterContext'
-import styled from 'styled-components'
+import React, { useContext } from "react";
+import { FilterContext } from "../Context/FilterContext";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const FilterSection = () => {
-  
-  const {getCatSelection} = useContext(FilterContext)
-
+  const { getCatSelection } = useContext(FilterContext);
 
   return (
     <FilterContainer>
-   <div className="FilterCategory">
+      <div className=" ">
         <h3 className="category-title">Category Filter</h3>
         <div>
-          <h3
-            className="category-name"
-            onClick={() => getCatSelection("2-WHEELER")}
-          >
-            2 Wheeler
-          </h3>
-          <h3
-            className="category-name"
-            onClick={() => getCatSelection("3-WHEELER")}
-          >
-            3 Wheeler
-          </h3>
-          <h3
-            className="category-name"
-            onClick={() => getCatSelection("4-WHEELER")}
-          >
-            4 Wheeler
-          </h3>
-          <h3
-            className="category-name"
-            onClick={() => getCatSelection("HEAVY-WHEELER")}
-          >
-            Heavy Vehicles
-          </h3>
+          <NavLink to="/product">
+            <h3
+              className="category-name"
+              onClick={() => getCatSelection("2-WHEELER")}
+            >
+              2 Wheeler
+            </h3>
+          </NavLink>
+          <NavLink to="/product">
+            <h3
+              className="category-name"
+              onClick={() => getCatSelection("3-WHEELER")}
+            >
+              3 Wheeler
+            </h3>
+          </NavLink>
+          <NavLink to="/product">
+            <h3
+              className="category-name"
+              onClick={() => getCatSelection("4-WHEELER")}
+            >
+              4 Wheeler
+            </h3>
+          </NavLink>
+          <NavLink to="/product">
+            <h3
+              className="category-name"
+              onClick={() => getCatSelection("HEAVY-WHEELER")}
+            >
+              Heavy Vehicles
+            </h3>
+          </NavLink>
         </div>
       </div>
     </FilterContainer>
-  )
-}
+  );
+};
 
-export default FilterSection
+export default FilterSection;
 
 const FilterContainer = styled.section`
-
-.FilterCategory {
+  .FilterCategory {
     cursor: pointer;
     max-width: 120rem;
     width: 25rem;
@@ -69,16 +75,15 @@ const FilterContainer = styled.section`
     &:hover {
       background-color: #da251c;
       color: white;
+      transition: all 1s ease-in-out;
     }
   }
 
   /* .........Media Query ............... */
-  @media (max-width: 968px){
-    .FilterCategory{
+  @media (max-width: 968px) {
+    .FilterCategory {
       text-align: center;
-    width: 100%;
+      width: 100%;
     }
   }
-
-`
-
+`;

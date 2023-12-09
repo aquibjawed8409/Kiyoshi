@@ -8,6 +8,8 @@ const InitialState = {
   filter_products: [],
   category_filters: [],
   selected_filters: [],
+  single_product : [],
+  text : "",
 };
 
 const FilterProvider = ({ children }) => {
@@ -19,17 +21,27 @@ const FilterProvider = ({ children }) => {
     dispatch({type: "SPECIAL_CATEGORY", payload : category});
  }
 
- // Selected Category Filter 
+ // Selected Category Filter (2,3,4, Heavy Wheeler)
  const getCatSelection = (category) =>{
   dispatch({type: "SELECTED_CATEGORY", payload : category});
 }
-// Filter Type
+// Filter Type (Air /Oil / Cabin)
 const selectFilterType = (category) =>{
   dispatch({type: "SELECTED_FILTER_TYPE", payload : category});
 }
 
+// Search FIlter
+const searchFilter = (e) =>{
+  const value = e.target.value;
+  dispatch({type: "SEARCH_FILTER", payload : value});
+}
 
 
+
+const getSingleProduct = async (data) =>{
+  // console.log(data)
+ dispatch({type : "GET_SINGLE_DATA", payload : data});
+}
 
 useEffect(()=>{
   fetch("Filter.json")
@@ -42,7 +54,7 @@ useEffect(()=>{
 
 
   
-  return <FilterContext.Provider value={{ ...state,getSpecialCat,getCatSelection,selectFilterType}}>{children}</FilterContext.Provider>;
+  return <FilterContext.Provider value={{ ...state,getSpecialCat,getCatSelection,selectFilterType,getSingleProduct,searchFilter}}>{children}</FilterContext.Provider>;
 };
 
 export { FilterProvider, FilterContext };

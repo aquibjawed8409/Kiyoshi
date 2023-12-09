@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext} from 'react'
+
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { FilterContext } from '../Context/FilterContext';
+
 
 const Card = ({PartNo,MRP,Make,Model,Image }) => {
+    const {getSingleProduct} = useContext(FilterContext)
+
   return (
     <CardContainer>
-       <NavLink to={`/singleproduct/${PartNo}`}>
+       <NavLink to={`/singleproduct/${PartNo}`} onClick={()=>{getSingleProduct({PartNo,MRP,Make,Model,Image} )}}>
 
        <figure><img src={Image} alt={Model} /></figure>
       <div>
@@ -15,8 +20,8 @@ const Card = ({PartNo,MRP,Make,Model,Image }) => {
             <li><p><b>Vehicle Type : </b>{Make}</p></li>
             <li><p><b>Model : </b>{Model}</p></li>
             <li><p><b>Part No : </b>{PartNo}</p></li>
-        </ul>
-      </div>
+          </ul>
+        </div>
        </NavLink>
     </CardContainer>
   )
