@@ -1,11 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaLocationDot,
-  FaXTwitter
-} from "react-icons/Fa6";
+import { FaFacebookF, FaLinkedinIn, FaLocationDot,FaXTwitter  } from "react-icons/fa6";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiMail } from "react-icons/Hi";
