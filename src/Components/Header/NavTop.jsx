@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FaLocationDot } from "react-icons/Fa6";
-import { HiMail } from "react-icons/Hi";
+import { FaLocationDot } from "react-icons/fa6";
+import { HiMail } from "react-icons/hi";
 
 const NavTop = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { HiOutlineLocationMarker } from "react-icons/Hi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiPhoneCall } from "react-icons/bi";
 import { FiMail } from "react-icons/fi";
 
