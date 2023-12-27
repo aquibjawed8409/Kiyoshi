@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FilterContext } from '../Context/FilterContext';
+import { FilterContext } from '../../Context/FilterContext';
 import styled from 'styled-components';
 import Card from './Card';
 
@@ -22,9 +22,11 @@ const FilterProduct = () => {
         <p className="empty-message">No Data to be Shown</p>
       ) : (
         <>
+          <>
           {currentItems.map((curElem, i) => (
             <Card key={i} {...curElem} />
           ))}
+          </>
           <Pagination>
             {Array.from({ length: Math.ceil(selected_filters.length / itemsPerPage) }).map((_, index) => (
               <PageButton key={index} onClick={() => paginate(index + 1)}>
@@ -46,12 +48,10 @@ const ProductSection = styled.section`
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   margin-top: 20px;
 
   .empty-message {
     font-size: 3rem !important;
-    margin-left: 30rem;
   }
 `;
 
@@ -80,41 +80,3 @@ const PageButton = styled.button`
 
 
 
-
-// import React, { useContext } from 'react'
-// import { FilterContext } from '../Context/FilterContext'
-// import styled from 'styled-components'
-// import Card from './Card'
-
-// const FilterProduct = () => {
-
-//     const {selected_filters} = useContext(FilterContext)
-//     // console.log(all_filters)
-
-//   return (
-//     <ProductSection>
-//       {
-//         selected_filters.length === 0 ? (<p className="empty-message">No Data to be Shown</p>): selected_filters.map((curElem,i)=>{
-//             return <Card key={i} {...curElem}/>
-//         })
-//       }
-//     </ProductSection>
-//   )
-// }
-
-// export default FilterProduct
-
-// const ProductSection = styled.section`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 20px;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-//     margin-top: 20px;
-
-// .empty-message{
-//     font-size: 3rem !important;
-//     margin-left: 30rem;
-//   }
-// `

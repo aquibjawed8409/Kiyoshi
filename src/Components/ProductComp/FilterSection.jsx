@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FilterContext } from "../Context/FilterContext";
+import { FilterContext } from "../../Context/FilterContext";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const FilterSection = () => {
 
   return (
     <FilterContainer>
-      <div className=" ">
+      <div className="FilterCategory">
         <h3 className="category-title">Category Filter</h3>
         <div>
           <NavLink to="/product">
@@ -52,11 +52,19 @@ const FilterSection = () => {
 export default FilterSection;
 
 const FilterContainer = styled.section`
+  width: 26.5rem;
+  @media (max-width: 968px) {
+    width: 100%;
+  }
   .FilterCategory {
     cursor: pointer;
     max-width: 120rem;
-    width: 25rem;
+    width: 28rem;
     margin: 7rem auto;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+  }
+  a {
+    text-decoration: none;
   }
   .category-title {
     display: flex;
@@ -72,6 +80,9 @@ const FilterContainer = styled.section`
     background-color: white;
     margin-bottom: 0;
     transition: all 0.2s ease-in-out;
+    h3:hover {
+      text-decoration: none;
+    }
     &:hover {
       background-color: #da251c;
       color: white;
@@ -80,10 +91,25 @@ const FilterContainer = styled.section`
   }
 
   /* .........Media Query ............... */
+  @media (max-width: 1200px) {
+    .FilterCategory {
+      max-width: 120rem;
+      width: 24rem;
+      h3 {
+        font-size: 15px;
+      }
+    }
+  }
   @media (max-width: 968px) {
     .FilterCategory {
       text-align: center;
       width: 100%;
+      h3 {
+        font-size: 18px;
+      }
+    }
+    .category-title {
+      justify-content: center;
     }
   }
 `;

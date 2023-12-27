@@ -3,12 +3,20 @@ import reducer from "../Reducer/FilterReducer";
 
 const FilterContext = createContext();
 
+// Get the selected Filters from local storage
+const getStorageData = () =>{
+  let newSingleData = localStorage.getItem("selectFilter");
+  let parsedData = JSON.parse(newSingleData);
+  return parsedData;
+}
+
 const InitialState = {
   all_filters: [],
   filter_products: [],
   category_filters: [],
   selected_filters: [],
-  single_product : [],
+  single_product : getStorageData(),
+  top_product : [],
   text : "",
 };
 
@@ -37,11 +45,15 @@ const searchFilter = (e) =>{
 }
 
 
-
+// Single Product
 const getSingleProduct = async (data) =>{
-  // console.log(data)
  dispatch({type : "GET_SINGLE_DATA", payload : data});
 }
+
+// Set the Selected Filter in local storage
+useEffect(()=>{
+localStorage.setItem("selectFilter", JSON.stringify(state.single_product))
+},[state.single_product])
 
 useEffect(()=>{
   fetch("Filter.json")

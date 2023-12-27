@@ -1,6 +1,6 @@
 import React from 'react'
-import NavTop from './Components/NavTop'
-import NavBottom from './Components/NavBottom'
+import NavTop from './NavTop'
+import NavBottom from './NavBottom'
 
 const Header = () => {
   return (

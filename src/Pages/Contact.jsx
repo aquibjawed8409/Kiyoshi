@@ -1,7 +1,7 @@
 import React from 'react'
-import Crouselbreadcrum from './Crouselbreadcrum'
-import Contactaddress from './Contactaddress'
-import Contactform from './Contactform'
+import Crouselbreadcrum from '../Components/ContactComp/Crouselbreadcrum'
+import Contactaddress from '../Components/ContactComp/Contactaddress'
+import Contactform from '../Components/ContactComp/Contactform'
 
 const Contact = () => {
   return (

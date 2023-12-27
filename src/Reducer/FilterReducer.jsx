@@ -5,7 +5,9 @@ const FilterReducer = (state, action) => {
       let specialCategory = action.payload.filter((curElem, i) => {
         return curElem.Category == "special";
       });
-      // console.log(specialCategory)
+      let topProduct = action.payload.filter((curElem,i)=>{
+        return curElem.TopProduct === true
+      })
       return {
         ...state,
         all_filters: action.payload,
@@ -13,6 +15,7 @@ const FilterReducer = (state, action) => {
         selected_filters: action.payload,
         category_filters: specialCategory,
         single_product: action.payload,
+        top_product : topProduct
       };
     }
 
@@ -22,7 +25,6 @@ const FilterReducer = (state, action) => {
           return curElem.Make === action.payload;
         }
       );
-      // console.log(categoryWiseFilter)
 
       return {
         ...state,
@@ -37,7 +39,6 @@ const FilterReducer = (state, action) => {
         return curElem.Make === action.payload;
       });
 
-      // console.log(categoryWiseFilter)
 
       return {
         ...state,
@@ -52,10 +53,9 @@ const FilterReducer = (state, action) => {
       let filterType = selected_filter.filter((curElem, i) => {
         return curElem.FilterType === action.payload;
       });
-      // console.log(filterType)
       return {
         ...state,
-        selected_filter: filterType,
+        selected_filters: filterType,
       };
     }
 

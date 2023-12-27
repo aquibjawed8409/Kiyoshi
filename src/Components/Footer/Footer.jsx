@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   FaFacebookF,
   FaLinkedinIn,
-  FaTwitter,
   FaLocationDot,
+  FaXTwitter
 } from "react-icons/Fa6";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -21,7 +22,7 @@ const Footer = () => {
             <span>Special Offer For Subscription</span>
             <h3>To get best offer..</h3>
             <p>Please subscribe our regular news letters, discount offers..</p>
-            <form class="row g-3 d-flex align-items-center">
+            <form className="row g-3 d-flex align-items-center">
               <input
                 type="text"
                 className="footer-email-input"
@@ -42,13 +43,13 @@ const Footer = () => {
           <div className="middle-footer-content row ">
             <div className="col-lg-3 justify-content-start">
               <div className="footer-details">
-                <a href="/">
+                <NavLink to="/">
                   <img
                     src="https://kiyoshi-india.com/resources/assets/img/logo-2.png"
                     alt="logo"
                     className="mb-4"
                   />
-                </a>
+                </NavLink>
                 <p>
                   Kiyoshi is a popular brand name in Filtration. Our factory is
                   fully equipped setup to cater the demand for filters of
@@ -57,19 +58,31 @@ const Footer = () => {
                 </p>
                 <ul className="footer-social d-flex ">
                   <li className="icon-bg">
-                    <a href="https://www.facebook.com/" className="icons ">
+                    <NavLink
+                      to="https://www.facebook.com/"
+                      target="_blank"
+                      className="icons "
+                    >
                       <FaFacebookF className="icons " />
-                    </a>
+                    </NavLink>
                   </li>
                   <li className="icon-bg">
-                    <a href="https://www.twitter.com/" className="icons ">
-                      <FaTwitter className="icons " />
-                    </a>
+                    <NavLink
+                      to="https://www.twitter.com/"
+                      target="_blank"
+                      className="icons "
+                    >
+                      <FaXTwitter className="icons " />
+                    </NavLink>
                   </li>
                   <li className="icon-bg">
-                    <a href="https://www.linkedin.com/" className="icons ">
+                    <NavLink
+                      to="https://www.linkedin.com/"
+                      target="_blank"
+                      className="icons "
+                    >
                       <FaLinkedinIn className="icons " />
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -91,57 +104,57 @@ const Footer = () => {
                     <span className="icons">
                       <MdKeyboardDoubleArrowRight />
                     </span>
-                    <a href="/" className="text-white links-text">
+                    <NavLink to="/" className="text-white links-text">
                       Home
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
                     <span className="icons">
                       <MdKeyboardDoubleArrowRight />
                     </span>
-                    <a href="/about" className="text-white links-text">
-                      {" "}
+                    <NavLink to="/about" className="text-white links-text">
                       About Us
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
                     <span className="icons">
                       <MdKeyboardDoubleArrowRight />
                     </span>
-                    <a href="/products" className="text-white links-text">
-                      {" "}
+                    <NavLink to="/product" className="text-white links-text">
                       Products
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
                     <span className="icons">
                       <MdKeyboardDoubleArrowRight />
-                    </span>{" "}
-                    <a
-                      href="https://kiyoshi-india.com/resources/assets/catalogue.pdf"
+                    </span>
+                    <NavLink
+                      to="https://kiyoshi-india.com/resources/assets/catalogue.pdf"
                       className="text-white links-text"
+                      target="_blank"
                     >
                       Catalogue
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
                     <span className="icons">
                       <MdKeyboardDoubleArrowRight />
-                    </span>{" "}
-                    <a
-                      href="https://kiyoshi-india.com/resources/assets/Kiyoshi_Profile_with%20pricelist.pdf"
+                    </span>
+                    <NavLink
+                      to="https://kiyoshi-india.com/resources/assets/Kiyoshi_Profile_with%20pricelist.pdf"
                       className="text-white links-text"
+                      target="_blank"
                     >
                       Price List
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
                     <span className="icons">
                       <MdKeyboardDoubleArrowRight />
-                    </span>{" "}
-                    <a href="/contact" className="text-white links-text">
+                    </span>
+                    <NavLink to="/contact" className="text-white links-text">
                       Contact Us
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -209,7 +222,6 @@ const FooterContainer = styled.section`
   // Top Footer CSS
   .top-footer-area {
     background-image: url(https://kiyoshi-india.com/resources/assets/img/newsletter-img.jpg);
-    /* min-height: 60vh; */
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -292,11 +304,6 @@ const FooterContainer = styled.section`
     z-index: -1;
     opacity: 0.9;
   }
-  /* .middle-footer-content{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  } */
   .footer-details p {
     font-weight: 400;
     font-size: 1.5rem;
@@ -315,7 +322,6 @@ const FooterContainer = styled.section`
     }
     .icon-bg:hover {
       background-color: red;
-      /* transition: all.5s ease-in-out; */
       transform: translateY(-2px);
       color: white;
     }
@@ -375,9 +381,6 @@ const FooterContainer = styled.section`
     font-size: 30px;
     top: 0;
     left: 0;
-    /* align-items: center;
-      justify-content: center;
-      text-align: center; */
   }
 
   /* Bottom Footer CSS */
@@ -394,19 +397,13 @@ const FooterContainer = styled.section`
     }
   }
 
-
-
-  @media (max-width: 600px){
-    
-  .top-footer-area{
-    min-height: 65vh; 
-    
+  @media (max-width: 600px) {
+    .top-footer-area {
+      min-height: 65vh;
+    }
+    form button {
+      top: 7rem;
+      padding: 0px 20px;
+    }
   }
-  form button {
-  /* right: 7rem; */
-    top: 7rem;
-    padding: 0px 20px;
-
-  }
-  }
-`
+`;

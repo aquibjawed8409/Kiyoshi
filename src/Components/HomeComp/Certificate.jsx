@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutComp from './AboutComp'
+import AboutComp from '../AboutComp/AboutComp'
 import styled from 'styled-components'
 
 const Certificate = () => {

@@ -11,7 +11,7 @@ const Crouselbreadcrum = ({breadcrum, background}) => {
               <h2>{breadcrum}</h2>
               <ul className='breadcrum'>
                 <li><a href="/">Home</a></li>
-                <li className='breadcrum-before'>{breadcrum}</li>
+                <li className='breadcrum-before'>|    {breadcrum}</li>
               </ul>
             </div>
           </div>
@@ -39,7 +39,6 @@ position: relative;
   left: 0;
   width: 100%;
   height: 100%;
-  /* z-index: -1; */
   background-color: #09101f4d;
 }
 .title{

@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import Carousel from './Components/Carousel'
-import FilterProduct from './Components/FilterProduct';
-import FilterSection from './Components/FilterSection';
-import FilterTypeSelection from './Components/FilterTypeSelection';
+import Carousel from '../Components/HomeComp/Carousel'
+import FilterProduct from '../Components/ProductComp/FilterProduct';
+import FilterSection from '../Components/ProductComp/FilterSection';
+import FilterTypeSelection from '../Components/HomeComp/FilterTypeSelection';
 
 const Product = () => {
   return (
     <ProductContainer>
-      {/* <Carousel/> */}
+    <Carousel title={"Shop"} breadcrumHome={"Product"} breadcrum={"|  shop"} height={"380px"}/>
       <FilterTypeSelection/>
       <div className='product'>
         <FilterSection />
@@ -20,6 +20,7 @@ const Product = () => {
 
 export default Product
 const ProductContainer = styled.section`
+overflow: hidden;
 .product{
   display: grid;
   grid-template-columns: 1fr 5fr;

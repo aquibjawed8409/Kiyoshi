@@ -1,19 +1,43 @@
-import React, { useContext } from "react";
-import { FilterContext } from "./Context/FilterContext";
-import Card from "./Components/Card";
+import React, { useContext, useState } from "react";
+import { FilterContext } from "../../Context/FilterContext";
+import Card from "../ProductComp/Card";
 import styled from "styled-components";
 const CategorySelection = () => {
   const { filter_products, getSpecialCat } = useContext(FilterContext);
-  // console.log(filter_products)
+  const [selectCategory, setSelectCategory] = useState(null);
+
+  const handleCategoryClick = (category) => {
+    getSpecialCat(category);
+    setSelectCategory(category);
+  };
   return (
     <SpecialCategory>
       <div className="category_section">
         <h2>Category Selection</h2>
         <div className="category_btn">
-          <button onClick={() => getSpecialCat("2-WHEELER")}>2 Wheeler</button>
-          <button onClick={() => getSpecialCat("3-WHEELER")}>3 Wheeler</button>
-          <button onClick={() => getSpecialCat("4-WHEELER")}>4 Wheeler</button>
-          <button onClick={() => getSpecialCat("HEAVY-WHEELER")}>
+          <button
+            className={selectCategory === "2-WHEELER" ? "active" : ""}
+            onClick={() => handleCategoryClick("2-WHEELER")}
+          >
+            2 Wheeler
+          </button>
+          <button
+            className={selectCategory === "3-WHEELER" ? "active" : ""}
+            onClick={() => handleCategoryClick("3-WHEELER")}
+          >
+            3 Wheeler
+          </button>
+          <button
+            className={selectCategory === "4-WHEELER" ? "active" : ""}
+            onClick={() => handleCategoryClick("4-WHEELER")}
+          >
+            4 Wheeler
+          </button>
+          <button
+            className={selectCategory === "HEAVY-WHEELER" ? "active" : ""}
+            onClick={() => handleCategoryClick("HEAVY-WHEELER")}
+          >
+            {" "}
             Heavy Wheeler
           </button>
         </div>
@@ -22,8 +46,8 @@ const CategorySelection = () => {
         {filter_products.length === 0 ? (
           <p className="empty-message">No Data to be Shown</p>
         ) : (
-          filter_products.map((curElem) => {
-            return <Card {...curElem} />;
+          filter_products.map((curElem, i) => {
+            return <Card key={i} {...curElem} />;
           })
         )}
       </div>
@@ -44,10 +68,13 @@ const SpecialCategory = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 20px;
     .category_btn {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
       width: 60%;
       justify-content: space-between;
       font-size: 18px;
@@ -59,10 +86,12 @@ const SpecialCategory = styled.section`
       }
     }
   }
+  .active {
+    color: #da251c;
+  }
   .card_render {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     width: 90%;
     margin: auto;
     gap: 20px;
@@ -70,7 +99,7 @@ const SpecialCategory = styled.section`
     margin-bottom: 2rem;
     .empty-message {
       font-size: 3rem !important;
-      margin-left: 40rem;
+      margin-left: 10rem;
       margin-top: 3rem;
       margin-bottom: 3rem;
     }
@@ -85,16 +114,14 @@ const SpecialCategory = styled.section`
       }
       .category_section h2 {
         font-size: 3.5rem;
+        text-align: center;
       }
       .category_section .category_btn {
-      width  : 100%;
+        width: 100%;
       }
       .category_btn button {
-      font-size: 1rem;
+        font-size: 1rem;
+      }
     }
-    }
-
-   
-
   }
 `;

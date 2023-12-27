@@ -1,4 +1,3 @@
-// import {createGlobalStyle} from 'styled-components';
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -76,6 +75,7 @@ li{
 }
 .common-title{
     color: white;
+    z-index: 100;
 }
 .common-title h2{
     font-weight: 900;
@@ -85,31 +85,21 @@ li{
     margin: 2rem;
     color: white;
 }
-.common-title .breadcrum{
+.breadcrum{
     display: flex;
-    gap: 10px;
-    margin-left: 40px;
     text-align: center;
+    justify-content: center;
     font-size: 16px;
     font-weight: 600;
     color: red;
 }
-.common-title .breadcrum li a{
+.breadcrum li a{
     color: white;
     text-decoration: none;
     margin-right: 1rem;
 }
-.common-title .breadcrum li{
+.breadcrum li{
     position: relative;
-}
-.common-title .breadcrum .breadcrum-before::before{
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 6px;
-    height: 12px;
-    width: 1px;
-    background: red;
 }
 .content-heading{
     font-weight: 900;
