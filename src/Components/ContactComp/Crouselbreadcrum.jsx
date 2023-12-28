@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Crouselbreadcrum = ({breadcrum, background}) => {
+  useEffect(()=>{
+    AOS.init({duration : 1000, offset : 0})
+  },[])
   return (
     <Aboutcontainer>
         <div className="about-container" >
         <div className="about-corousel-image" style={{backgroundImage: `url(${background})`}}>
-          <div className="title">
+          <div className="title" data-aos="fade-out">
             <div className="common-title">
               <h2>{breadcrum}</h2>
               <ul className='breadcrum'>

@@ -1,16 +1,17 @@
-import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useState , useEffect} from "react";
 import { FilterContext } from "../Context/FilterContext";
 import styled from "styled-components";
-import { FaMinus, FaPlus, FaShoppingBasket } from "react-icons/fa";
-import { IoMdSearch } from "react-icons/io";
+import { FaMinus, FaPlus, FaShoppingBasket,FaSearch } from "react-icons/fa";
 import FilterSection from "../Components/ProductComp/FilterSection";
 import { NavLink } from "react-router-dom";
 import Carousel from "../Components/HomeComp/Carousel";
 import Card from "../Components/ProductComp/Card";
 
 const SingleProduct = () => {
-  const { id } = useParams();
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   const { single_product, searchFilter, top_product, text } =
     useContext(FilterContext);
@@ -35,12 +36,14 @@ const SingleProduct = () => {
 
   return (
     <SingleContainer>
-      <Carousel
-        title={"Product Details"}
-        breadcrumHome={"Product"}
-        breadcrum={"|  Product Details"}
-        height={"380px"}
-      />
+      <div>
+        <Carousel
+          title={"Product Details"}
+          breadcrumHome={"Product"}
+          breadcrum={"|  Product Details"}
+          height={"380px"}
+        />
+      </div>
       <div className="product-container">
         <div className="about_details">
           {/* .... Product ...... */}
@@ -138,7 +141,7 @@ const SingleProduct = () => {
                 onChange={(e) => searchFilter(e)}
               />
               <NavLink to={`/product?query=${text}`}>
-                <IoMdSearch className="search-icon" />
+                <FaSearch className="search-icon" />
               </NavLink>
             </form>
           </div>
@@ -168,7 +171,7 @@ const SingleContainer = styled.section`
   .product-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10rem;
+    gap: 11rem;
     width: 90%;
     margin: 8rem auto;
   }
@@ -189,6 +192,7 @@ const SingleContainer = styled.section`
     }
     .details {
       display: flex;
+      padding: 1rem;
       gap: 2rem;
       flex-direction: column;
       h3 {
@@ -321,9 +325,9 @@ const SingleContainer = styled.section`
   }
   .search-icon {
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 5px;
-    font-size: 40px;
+    font-size: 35px;
     color: #ff4545;
     background-color: #f8f9fa;
     padding: 5px;

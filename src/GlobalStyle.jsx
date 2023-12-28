@@ -69,7 +69,7 @@ li{
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 50px;
+    width: 115px;
     background-color: #fff;
     margin-top: 10px;
 }

@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiPhoneCall } from "react-icons/bi";
 import { FiMail } from "react-icons/fi";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Contactaddress = () => {
+  useEffect(()=>{
+    AOS.init({duration : 1000, offset : 100})
+  },[])
   return (
     <AddressContainer>
       <div className="address-container container">
-        <div className="box">
+        <div className="box" data-aos="slide-left">
           <div className="icon">
             <FiMail className="icons" />
           </div>
@@ -17,7 +22,7 @@ const Contactaddress = () => {
           <p>NITIN@KIYOSHI-INDIA.COM</p>
         </div>
 
-        <div className="box">
+        <div className="box" >
           <div className="icon">
             <HiOutlineLocationMarker className="icons" />
           </div>
@@ -27,7 +32,7 @@ const Contactaddress = () => {
             GURUGRAM(122015),HARYANA
           </p>
         </div>
-        <div className="box">
+        <div className="box" data-aos="slide-right">
           <div className="icon">
             <BiPhoneCall className="icons" />
           </div>

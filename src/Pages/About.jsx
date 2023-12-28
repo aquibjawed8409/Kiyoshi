@@ -1,10 +1,11 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import styled from "styled-components";
 import AboutComp from "../Components/AboutComp/AboutComp";
 import { TiTick } from "react-icons/ti";
 import Crouselbreadcrum from "../Components/ContactComp/Crouselbreadcrum";
 
 const About = () => {
+  
   const scope = [
     "OIL FILTER",
     "AIR FILTER",
@@ -30,6 +31,7 @@ const About = () => {
         background="https://kiyoshi-india.com/resources/assets/img/main-banner4.jpg"
       />
 
+      <div >
       <AboutComp
         image="https://kiyoshi-india.com/resources/assets/img/about-company.jpg"
         contentHeading="About Kiyoshi"
@@ -38,20 +40,25 @@ const About = () => {
         contentTextList={filterscope}
         divposition="row"
       />
+      </div>
 
+      <div >
       <AboutComp
         image="https://kiyoshi-india.com/resources/assets/img/mission.jpg"
         contentHeading="Our Vision & Mission"
         contentTextTop="Our vision is to be globally reputed engineered metal and filter products company by manufacturing best quality product by utilizing high innovation technology at low manufacturing cost, this will allow us to have strong and enduring relationship with our esteemed customers.To keep our vision in mind our mission is to deliver significant business value to our customers worldwide through effectve design selection and deployement of best in class solution and technologies enabling them to reduce operating and supply chain costs improves safety and increase overall profitability always cognizant of environment impact"
         divposition="row-reverse"
       />
+      </div>
 
+      <div>
       <AboutComp
         image="https://kiyoshi-india.com/resources/assets/img/about-iso.jpg"
         contentHeading="Quality Is Our Moto"
         contentTextTop="To achieve our goal, we have our own standard room which contain all standard measuring equipments including oil test ring, min and max pore, paper bursting machine, hardness tester, height gauge,vernier caliper etc."
         divposition="row"
       />
+      </div>
     </AboutSection>
   );
 };

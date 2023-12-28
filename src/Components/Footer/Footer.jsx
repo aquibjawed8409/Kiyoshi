@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaLocationDot,FaXTwitter  } from "react-icons/fa6";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
-
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const Footer = () => {
+
+useEffect(()=>{
+  AOS.init({duration : 1500, offset : 200})
+},[])
+
   return (
     <FooterContainer>
       {/* Top Footer */}
@@ -36,7 +42,7 @@ const Footer = () => {
       <div className="middle-footer-area">
         <div className="container d-flex justify-content-start">
           <div className="middle-footer-content row ">
-            <div className="col-lg-3 justify-content-start">
+            <div className="col-lg-3 justify-content-start" data-aos="fade-right">
               <div className="footer-details">
                 <NavLink to="/">
                   <img
@@ -82,16 +88,16 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-3 col-md-6" data-aos="fade-left">
               <div className="footer-info">
                 <h2 className="footer-title">General Info</h2>
                 <div className="footer-image-area">
-                  <span className="footer-image1 bg1 footer-bg-img mb-2"></span>
-                  <span className="footer-image1 bg2 footer-bg-img mb-2"></span>
+                  <span className="footer-image1 bg1 footer-bg-img mb-2 mr-3"></span>
+                  <span className="footer-image1 bg2 footer-bg-img mb-2 mr-3"></span>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-3 col-md-6" data-aos="fade-right">
               <h2 className="footer-title">Quick Links</h2>
               <div className="quick-links">
                 <ul>
@@ -154,7 +160,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-3  col-md-6">
+            <div className="col-lg-3  col-md-6" data-aos="fade-left">
               <h2 className="footer-title">Connect Us</h2>
               <div className="connect ">
                 <div className="d-flex mb-4 position-relative">
@@ -301,13 +307,18 @@ const FooterContainer = styled.section`
   }
   .footer-details p {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .footer-social {
     gap: 15px;
     align-items: center;
     text-align: center;
     margin-top: 20px;
+    li{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    }
     .icon-bg {
       width: 40px;
       height: 40px;
@@ -324,6 +335,7 @@ const FooterContainer = styled.section`
       color: white;
     }
   }
+  
   .footer-image1 {
     width: 200px;
     height: 111px;
@@ -372,8 +384,11 @@ const FooterContainer = styled.section`
     transition: 0.5s;
     background-color: #da251c;
   }
+  .connect h3{
+    font-size: 1.6rem;
+  }
   .connect .icons {
-    font-size: 30px;
+    font-size: 26px;
     top: 0;
     left: 0;
   }
@@ -384,8 +399,15 @@ const FooterContainer = styled.section`
     min-height: 12vh;
     font-size: 1.6rem;
   }
+  .bottom-footer-area .container{
+    gap: 30px;
+  }
+  .copyright{
+    font-size: 16px;
+  }
   .credit {
     font-weight: 600;
+    font-size: 16px;
     span {
       color: red;
       font-size: 1.8rem;
@@ -396,9 +418,21 @@ const FooterContainer = styled.section`
     .top-footer-area {
       min-height: 65vh;
     }
+    form input{
+      font-size: 14px;
+    }
     form button {
       top: 7rem;
       padding: 0px 20px;
     }
+    .copyright{
+    font-size: 14px;
+  }
+  .credit {
+    font-size: 14px;
+    span {
+      font-size: 1.4rem;
+    }
+  }
   }
 `;

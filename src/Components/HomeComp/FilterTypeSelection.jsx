@@ -7,6 +7,13 @@ const FilterTypeSelection = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const { selectFilterType } = useContext(FilterContext);
+  const [selectType, setSelectType]  = useState(null)
+
+
+  const handleTypeClick = (elem) =>{
+    selectFilterType(elem);
+    setSelectType(elem)
+  }
 
   const filterType = ["AIR FILTER", "OIL FILTER", "CABIN FILTER"];
 
@@ -35,8 +42,8 @@ const FilterTypeSelection = () => {
                 .replace(" ", "-")}`}
             >
               <div
-                className="filter-type"
-                onClick={() => selectFilterType(curElem)}
+                className={`filter-type ${selectType === curElem ? "active" : ""}`}
+                onClick={() => handleTypeClick(curElem)}
               >
                 <img
                   src={
@@ -82,6 +89,10 @@ const FilterSelect = styled.section`
     max-width: 30rem;
     position: relative;
     text-align: center;
+  }
+  .filter-type.active{
+    background-color: #ffe1df;
+    color: black;
   }
   .filter-type img{
     height: 5rem;

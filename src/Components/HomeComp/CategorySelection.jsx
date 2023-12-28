@@ -1,8 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FilterContext } from "../../Context/FilterContext";
 import Card from "../ProductComp/Card";
 import styled from "styled-components";
+import AOS from 'aos'
+import 'aos/dist/aos.css';
+
+
 const CategorySelection = () => {
+  useEffect(()=>{
+    AOS.init({duration : 1500, offset : 200})
+  },[])
   const { filter_products, getSpecialCat } = useContext(FilterContext);
   const [selectCategory, setSelectCategory] = useState(null);
 
@@ -42,7 +49,7 @@ const CategorySelection = () => {
           </button>
         </div>
       </div>
-      <div className="card_render">
+      <div className="card_render" data-aos="zoom-in">
         {filter_products.length === 0 ? (
           <p className="empty-message">No Data to be Shown</p>
         ) : (

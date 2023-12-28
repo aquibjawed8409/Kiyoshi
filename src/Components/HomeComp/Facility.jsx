@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const imageNumber = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const Facility = () => {
+  useEffect(()=>{
+    AOS.init({duration : 1500, offset : 200})
+  }, [])
   return (
     <FacilityContainer>
       <h2 className="content-heading">
@@ -13,7 +18,7 @@ const Facility = () => {
       <div className="facility-image">
         {imageNumber.map((curImg, i) => {
           return (
-            <div key={i} className="image">
+            <div key={i} className="image" data-aos="slide-left">
               <img
                 src={`https://kiyoshi-india.com/resources/assets/img/gallery/gallery-${curImg}.jpg`}
                 alt=""

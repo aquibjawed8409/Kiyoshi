@@ -1,17 +1,21 @@
-import React from 'react'
 import styled from 'styled-components';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from 'react';
 
 const AboutComp = ({image, contentHeading, contentTextTop, contentTextBottom, divposition, contentTextList}) => {
-
+  useEffect(()=>{
+    AOS.init({duration : 1000, offset : 150})
+  },[])
     
   return (
     <Aboutcontent>
       <div className="about-content-container col-lg-6 container" style={{flexDirection : divposition}}>
-        <div className="about-content-image">
+        <div className="about-content-image" data-aos="fade-right">
             <img src={image} alt="" />
         </div>
-        <div className="about-content-text">
-            <h1 className="content-heading">{contentHeading}</h1>
+        <div className="about-content-text" data-aos="zoom-out">
+            <h1 className="content-heading" >{contentHeading}</h1>
             <p>{contentTextTop}</p>
             <p>{contentTextBottom}</p>
 
@@ -25,7 +29,7 @@ const AboutComp = ({image, contentHeading, contentTextTop, contentTextBottom, di
 export default AboutComp;
 
 const Aboutcontent = styled.section`
-margin-top: 7rem;
+margin: 7rem 0rem;
 .about-content-container{
     display: flex;
     gap: 2rem;

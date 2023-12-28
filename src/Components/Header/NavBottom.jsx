@@ -35,6 +35,7 @@ const NavBottom = () => {
   // Toggle Helpline Number
   const showNumber = () => {
     setShowNum(!showNum);
+    closeNavbar()
   };
   return (
     <NavContainer>
@@ -143,7 +144,7 @@ const NavBottom = () => {
         </div>
 
         <div className="icons">
-          <BsThreeDots className="threeDots" onClick={showNumber} />
+          <BsThreeDots className="threeDots" onClick={showNumber}/>
           {openNav ? (
             <IoClose
               className={`close ${openNav ? "active" : ""}`}
@@ -292,7 +293,6 @@ const NavContainer = styled.section`
       display: none;
     }
     .mobile-nav {
-      /* display: block; */
       position: absolute;
       top: 50px;
       right: 10px;
@@ -303,6 +303,18 @@ const NavContainer = styled.section`
     }
     .mobile-nav.active {
       display: block;
+      animation: render 2s ease-in-out;
+    }
+    @keyframes render {
+      0%{
+        opacity: 0;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      100%{
+        opacity : 1
+      }
     }
     .icons {
       display: block;
@@ -322,5 +334,10 @@ const NavContainer = styled.section`
     .open.active {
       display: none;
     }
+
+
+
+    
   }
+  
 `;

@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Carousel = ({ title, subHead, breadcrumHome, breadcrum, height }) => {
+  useEffect(()=>{
+    AOS.init({duration : 1500, offset: 0})
+  },[])
+
+
   const slides = [
     "https://kiyoshi-india.com/resources/assets/img/main-banner1.jpg",
     "https://kiyoshi-india.com/resources/assets/img/main-banner2.jpg",
@@ -48,8 +56,8 @@ const Carousel = ({ title, subHead, breadcrumHome, breadcrum, height }) => {
         </button>
       </div>
 
-      <div className="carousel-content">
-        <h1>{title}</h1>
+      <div className="carousel-content" >
+        <h1 data-aos="fade-up">{title}</h1>
         <p>{subHead}</p>
         <ul className="breadcrum">
           <li>
@@ -134,10 +142,10 @@ const CarouselContainer = styled.section`
 
   @media (max-width: 768px) {
     .carousel-content h1 {
-      font-size: 45px;
+      font-size: 30px;
     }
     .carousel-content p {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 `;

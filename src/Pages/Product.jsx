@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react';
 import styled from 'styled-components'
 import Carousel from '../Components/HomeComp/Carousel'
 import FilterProduct from '../Components/ProductComp/FilterProduct';
@@ -6,6 +6,9 @@ import FilterSection from '../Components/ProductComp/FilterSection';
 import FilterTypeSelection from '../Components/HomeComp/FilterTypeSelection';
 
 const Product = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <ProductContainer>
     <Carousel title={"Shop"} breadcrumHome={"Product"} breadcrum={"|  shop"} height={"380px"}/>

@@ -1,44 +1,51 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { FilterContext } from "../../Context/FilterContext";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const FilterSection = () => {
   const { getCatSelection } = useContext(FilterContext);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategoryClick = (category) => {
+    getCatSelection(category);
+    setSelectedCategory(category);
+  };
 
   return (
     <FilterContainer>
       <div className="FilterCategory">
         <h3 className="category-title">Category Filter</h3>
         <div>
+        
           <NavLink to="/product">
             <h3
-              className="category-name"
-              onClick={() => getCatSelection("2-WHEELER")}
+              className={`category-name ${selectedCategory === "2-WHEELER" ? "selected" : ""}`}
+              onClick={() => handleCategoryClick("2-WHEELER")}
             >
               2 Wheeler
             </h3>
           </NavLink>
           <NavLink to="/product">
             <h3
-              className="category-name"
-              onClick={() => getCatSelection("3-WHEELER")}
+             className={`category-name ${selectedCategory === "3-WHEELER" ? "selected" : ""}`}
+              onClick={() => handleCategoryClick("3-WHEELER")}
             >
               3 Wheeler
             </h3>
           </NavLink>
           <NavLink to="/product">
             <h3
-              className="category-name"
-              onClick={() => getCatSelection("4-WHEELER")}
+              className={`category-name ${selectedCategory === "4-WHEELER" ? "selected" : ""}`}
+              onClick={() => handleCategoryClick("4-WHEELER")}
             >
               4 Wheeler
             </h3>
           </NavLink>
           <NavLink to="/product">
             <h3
-              className="category-name"
-              onClick={() => getCatSelection("HEAVY-WHEELER")}
+              className={`category-name ${selectedCategory === "HEAVY-WHEELER" ? "selected" : ""}`}
+              onClick={() => handleCategoryClick("HEAVY-WHEELER")}
             >
               Heavy Vehicles
             </h3>
@@ -88,6 +95,10 @@ const FilterContainer = styled.section`
       color: white;
       transition: all 1s ease-in-out;
     }
+  }
+  .category-name.selected {
+    background-color: #ffe1df;
+    color: black;
   }
 
   /* .........Media Query ............... */
