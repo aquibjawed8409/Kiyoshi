@@ -93,7 +93,7 @@ const CarouselContainer = styled.section`
   }
   .arrow {
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 100%;
     color: white;
     font-size: 36px;

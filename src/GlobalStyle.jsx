@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+body{
+    overflow: hidden;
+}
 html{
     font-size: 62.5%;
     overflow-x: hidden;
