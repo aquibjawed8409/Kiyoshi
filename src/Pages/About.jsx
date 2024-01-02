@@ -5,6 +5,10 @@ import { TiTick } from "react-icons/ti";
 import Crouselbreadcrum from "../Components/ContactComp/Crouselbreadcrum";
 
 const About = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   
   const scope = [
     "OIL FILTER",
